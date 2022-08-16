@@ -1,5 +1,3 @@
-import { ThemeConsumer } from "styled-components";
-
 const { Component } = require("react");
 
 export class Feedback extends Component {
