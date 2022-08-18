@@ -3,6 +3,8 @@ import { Statistics } from './Feedback/Statistics';
 import { FeedbackOptions } from './Feedback/FeedbackOptions';
 import { Section } from './Section/Section';
 import { Notification } from './Notification/Notification';
+import { GlobalStyle } from './GlobalStyle';
+
 export class App extends Component {
 
   state = {
@@ -54,6 +56,7 @@ export class App extends Component {
           />
         )}       
         </Section>
+        <GlobalStyle />
       </>
     )   
   }

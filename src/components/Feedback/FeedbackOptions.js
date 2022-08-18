@@ -1,13 +1,22 @@
+import PropTypes from 'prop-types';
+import { Button, ButtonList, ListItem } from "./Feedback.steled";
+
+
 
 export const FeedbackOptions = ({onSendFeedback, options}) => {
     
     return (
-        <ul>
+        <ButtonList>
             {options.map((option, index) => {
-                return (<li key={index}><button type="button" onClick={() => onSendFeedback(option)}>{option}</button></li>);
+                return (<ListItem key={index}><Button type="button" onClick={() => onSendFeedback(option)}>{option}</Button></ListItem>);
                 })
             }  
-        </ul>
+        </ButtonList>
     );
     
+};
+
+FeedbackOptions.propTypes = {
+    options: PropTypes.array,
+    onSendFeedback: PropTypes.func,
 };

@@ -1,4 +1,5 @@
-export const Statistics = ({ options, totalStat, positiveFeedback}) => {
+import PropTypes from 'prop-types';
+export const Statistics = ({ options, totalStat, positiveFeedback }) => {
     
     return (
         <ul>
@@ -11,3 +12,9 @@ export const Statistics = ({ options, totalStat, positiveFeedback}) => {
         </ul>
     );   
 };
+
+Statistics.propTypes = {
+    options: PropTypes.object,
+    totalStat: PropTypes.number,
+    positiveFeedback: PropTypes.string
+}
