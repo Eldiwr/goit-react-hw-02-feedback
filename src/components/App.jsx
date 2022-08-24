@@ -35,6 +35,7 @@ export class App extends Component {
 
   render() {
     const arrayOfCase = Object.keys(this.state);
+    const { good, bad, neutral } = this.state;
 
     return (
       <>
@@ -50,7 +51,9 @@ export class App extends Component {
             <Notification message={"There is no feedback"} /> 
           ) : (
             <Statistics
-              options={this.state}
+              good={good}
+              bad={bad}
+              neutral={neutral}
               totalStat={this.countTotalFeedback()}
               positiveFeedback={this.countPositiveFeedbackPercentage()}
           />

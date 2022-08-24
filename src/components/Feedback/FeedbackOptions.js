@@ -7,8 +7,8 @@ export const FeedbackOptions = ({onSendFeedback, options}) => {
     
     return (
         <ButtonList>
-            {options.map((option, index) => {
-                return (<ListItem key={index}><Button type="button" onClick={() => onSendFeedback(option)}>{option}</Button></ListItem>);
+            {options.map((option) => {
+                return (<ListItem key={option}><Button type="button" onClick={() => onSendFeedback(option)}>{option}</Button></ListItem>);
                 })
             }  
         </ButtonList>
@@ -17,6 +17,12 @@ export const FeedbackOptions = ({onSendFeedback, options}) => {
 };
 
 FeedbackOptions.propTypes = {
-    options: PropTypes.array,
-    onSendFeedback: PropTypes.func,
+    options: PropTypes.arrayOf(
+        PropTypes.shape({
+            good: PropTypes.number.isRequired,
+            neutral: PropTypes.number.isRequired,
+            bad: PropTypes.number.isRequired,
+        }),
+    ),
+    onSendFeedback: PropTypes.func.isRequired
 };
