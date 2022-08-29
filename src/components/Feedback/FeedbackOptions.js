@@ -17,12 +17,6 @@ export const FeedbackOptions = ({onSendFeedback, options}) => {
 };
 
 FeedbackOptions.propTypes = {
-    options: PropTypes.arrayOf(
-        PropTypes.shape({
-            good: PropTypes.number.isRequired,
-            neutral: PropTypes.number.isRequired,
-            bad: PropTypes.number.isRequired,
-        }),
-    ),
-    onSendFeedback: PropTypes.func.isRequired
+    onSendFeedback: PropTypes.func.isRequired,
+    options: PropTypes.array.isRequired,
 };
